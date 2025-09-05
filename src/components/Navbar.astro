@@ -1,0 +1,75 @@
+---
+import { ModeToggle } from "@/components/ModeToggel";
+const { pathname } = Astro.url;
+const links = [
+  { href: "/", label: "Beranda" },
+  { href: "/about", label: "Tentang" },
+  { href: "/projects", label: "Proyek" },
+  { href: "/contact", label: "Kontak" },
+];
+---
+
+<a
+  href="#konten"
+  class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-4 focus:z-50 bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 rounded px-3 py-2 text-sm font-medium shadow"
+  >Lewati ke Konten</a
+>
+
+<header
+  class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/70 dark:bg-slate-950/60 supports-[backdrop-filter]:bg-white/55 dark:supports-[backdrop-filter]:bg-slate-950/50 border-b border-slate-200/70 dark:border-slate-800/70 transition-colors"
+>
+  <div
+    class="mx-auto max-w-7xl px-5 h-16 flex items-center justify-between gap-6"
+  >
+    <div class="flex items-center gap-3">
+      <a
+        href="/"
+        class="font-semibold text-lg tracking-tight text-slate-800 dark:text-slate-100 flex items-center gap-2"
+      >
+        <span
+          class="text-[1.95rem] leading-none reenie-beanie-regular select-none bg-clip-text text-transparent bg-gradient-to-r from-slate-800 via-slate-600 to-slate-800 dark:from-slate-100 dark:via-slate-300 dark:to-slate-200"
+          >Berpesan</span
+        >
+      </a>
+    </div>
+    <nav class="hidden md:flex items-center gap-2" aria-label="Navigasi utama">
+      {
+        links.map((link) => {
+          const active = pathname === link.href;
+          return (
+            <a
+              href={link.href}
+              aria-current={active ? "page" : undefined}
+              class={`group relative rounded-full px-4 py-2 text-sm font-medium tracking-wide transition-colors ${active ? "text-slate-900 dark:text-slate-100" : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"}`}
+            >
+              <span class="relative z-10">{link.label}</span>
+              <span
+                class={`absolute inset-0 rounded-full opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all bg-slate-900/[0.05] dark:bg-slate-100/[0.06] ${active ? "opacity-100 scale-100" : ""}`}
+              />
+              {active && (
+                <span class="absolute -bottom-[9px] left-1/2 h-[2px] w-6 -translate-x-1/2 rounded-full bg-gradient-to-r from-indigo-500 via-indigo-400 to-indigo-500" />
+              )}
+            </a>
+          );
+        })
+      }
+    </nav>
+    <div class="flex items-center gap-2">
+      <ModeToggle client:load />
+    </div>
+  </div>
+</header>
+
+<style>
+  @media (max-width: 767px) {
+    header .nav-collapsed-enter {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    header .nav-collapsed-enter-active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+</style>

@@ -1,0 +1,163 @@
+---
+import { DialogCloseButton } from "@/components/Dialog";
+---
+
+<div
+  class="relative min-h-screen flex flex-col items-center justify-center px-6 py-12 overflow-hidden"
+>
+  <!-- Subtle layered background -->
+  <div
+    class="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
+  >
+  </div>
+  <div
+    class="pointer-events-none absolute -top-1/3 -right-1/4 w-[60rem] h-[60rem] rounded-full bg-gradient-to-br from-indigo-200/30 to-transparent dark:from-indigo-500/10 blur-3xl"
+  >
+  </div>
+  <div
+    class="pointer-events-none absolute -bottom-1/3 -left-1/4 w-[55rem] h-[55rem] rounded-full bg-gradient-to-tr from-purple-200/30 to-transparent dark:from-purple-500/10 blur-3xl"
+  >
+  </div>
+
+  <!-- Content wrapper -->
+  <div class="relative w-full max-w-6xl mx-auto text-center">
+    <!-- Heading -->
+    <div class="mb-10">
+      <h1 class="font-extrabold tracking-tight leading-[0.85] select-none">
+        <span
+          class="block text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-slate-700 to-slate-900 dark:from-slate-100 dark:via-slate-300 dark:to-slate-100 text-[4.5rem] sm:text-[7rem] md:text-[9rem] lg:text-[11rem] reenie-beanie-regular drop-shadow-sm animate-heading-reveal"
+        >
+          Berpesan
+        </span>
+      </h1>
+      <div class="mt-6 mx-auto max-w-2xl">
+        <p
+          class="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed opacity-0 animate-fade-in [animation-delay:120ms]"
+        >
+          Ruang sederhana untuk menyampaikan pesan bernuansa personal dengan
+          tampilan yang bersih dan tenang.
+        </p>
+      </div>
+    </div>
+
+    <!-- Action Area -->
+    <div
+      class="flex flex-col items-center gap-6 opacity-0 animate-fade-in [animation-delay:250ms]"
+    >
+      <div class="flex flex-col sm:flex-row gap-4 items-center">
+        <DialogCloseButton client:load />
+        <button
+          class="group relative inline-flex items-center justify-center px-8 py-3 rounded-full font-medium text-sm sm:text-base tracking-wide focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/70 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900 bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white shadow-md shadow-indigo-900/10 dark:shadow-black/40 transition-all duration-300"
+        >
+          <span class="relative">Mulai</span>
+          <span
+            class="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-400/0 via-white/10 to-indigo-400/0 opacity-0 group-hover:opacity-60 blur-sm transition-opacity duration-500"
+          ></span>
+        </button>
+      </div>
+      <p
+        class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-normal tracking-wide uppercase opacity-0 animate-fade-in [animation-delay:380ms]"
+      >
+        Antarmuka minimal • Fokus pada isi pesan
+      </p>
+    </div>
+
+    <!-- Feature Grid -->
+    <div
+      class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 opacity-0 animate-fade-in [animation-delay:500ms]"
+    >
+      <div
+        class="group relative rounded-2xl border border-slate-200/60 dark:border-slate-700/60 bg-white/70 dark:bg-slate-900/40 backdrop-blur-sm p-6 transition-all duration-500 hover:bg-white dark:hover:bg-slate-900 hover:shadow-[0_10px_35px_-10px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_10px_40px_-12px_rgba(0,0,0,0.55)]"
+      >
+        <div
+          class="mb-4 h-[2px] w-12 bg-gradient-to-r from-indigo-500 to-transparent rounded-full"
+        >
+        </div>
+        <h3
+          class="text-lg font-semibold tracking-tight text-slate-800 dark:text-slate-100 mb-2"
+        >
+          Terfokus
+        </h3>
+        <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+          Tampilan bersih tanpa gangguan agar pesan menjadi pusat perhatian.
+        </p>
+      </div>
+      <div
+        class="group relative rounded-2xl border border-slate-200/60 dark:border-slate-700/60 bg-white/70 dark:bg-slate-900/40 backdrop-blur-sm p-6 transition-all duration-500 hover:bg-white dark:hover:bg-slate-900 hover:shadow-[0_10px_35px_-10px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_10px_40px_-12px_rgba(0,0,0,0.55)]"
+      >
+        <div
+          class="mb-4 h-[2px] w-12 bg-gradient-to-r from-indigo-500 to-transparent rounded-full"
+        >
+        </div>
+        <h3
+          class="text-lg font-semibold tracking-tight text-slate-800 dark:text-slate-100 mb-2"
+        >
+          Estetika Halus
+        </h3>
+        <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+          Palet warna netral dengan aksen halus yang terasa modern dan elegan.
+        </p>
+      </div>
+      <div
+        class="group relative rounded-2xl border border-slate-200/60 dark:border-slate-700/60 bg-white/70 dark:bg-slate-900/40 backdrop-blur-sm p-6 transition-all duration-500 hover:bg-white dark:hover:bg-slate-900 hover:shadow-[0_10px_35px_-10px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_10px_40px_-12px_rgba(0,0,0,0.55)]"
+      >
+        <div
+          class="mb-4 h-[2px] w-12 bg-gradient-to-r from-indigo-500 to-transparent rounded-full"
+        >
+        </div>
+        <h3
+          class="text-lg font-semibold tracking-tight text-slate-800 dark:text-slate-100 mb-2"
+        >
+          Responsif
+        </h3>
+        <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+          Penyesuaian tipografi dan tata letak yang proporsional di setiap
+          layar.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fine grain noise overlay -->
+  <div
+    class="pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-soft-light dark:opacity-[0.12]"
+    style="background-image:radial-gradient(circle at 25% 25%,rgba(0,0,0,0.5) 0,transparent 60%),radial-gradient(circle at 75% 75%,rgba(0,0,0,0.4) 0,transparent 55%);"
+  >
+  </div>
+</div>
+
+<style>
+  @keyframes heading-reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(40px) scale(0.98);
+      letter-spacing: 0.05em;
+    }
+    55% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      letter-spacing: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-heading-reveal {
+    animation: heading-reveal 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  }
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+</style>

@@ -1,0 +1,288 @@
+<div
+  class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden bg-gradient-to-b from-sky-100 to-blue-200 dark:from-slate-900 dark:to-blue-950"
+>
+  <div class="wave" id="wave1"></div>
+  <div class="wave" id="wave2"></div>
+  <div class="wave" id="wave3"></div>
+  <div class="wave" id="wave4"></div>
+  <div class="wave" id="wave5"></div>
+  <div class="wave" id="wave6"></div>
+  <div class="wave" id="wave7"></div>
+  <div class="wave" id="wave8"></div>
+  <div class="wave" id="wave9"></div>
+  <div class="wave" id="wave10"></div>
+  <div class="wave" id="wave11"></div>
+  <div class="wave" id="wave12"></div>
+  <div class="wave" id="wave13"></div>
+  <div class="wave" id="wave14"></div>
+  <div class="wave" id="wave15"></div>
+  <div class="wave" id="wave16"></div>
+  <div class="wave" id="wave17"></div>
+  <div class="wave" id="wave18"></div>
+  <div class="wave" id="wave19"></div>
+  <div class="wave" id="wave20"></div>
+</div>
+
+<style>
+  :root {
+    /* Morning Sea Palette - Soft, harmonious colors */
+    --wave1: #e8f4fd; /* Light sky blue */
+    --wave2: #b8e6ff; /* Soft cyan */
+    --wave3: #87ceeb; /* Sky blue */
+    --wave4: #4fc3f7; /* Light blue */
+    --wave5: #29b6f6; /* Blue */
+    --wave6: #0288d1; /* Medium blue */
+    --wave7: #0277bd; /* Darker blue */
+    --wave8: #01579b; /* Deep blue */
+    --wave9: #e3f2fd; /* Very light blue */
+    --wave10: #bbdefb; /* Light blue */
+    --wave11: #90caf9; /* Medium light blue */
+    --wave12: #64b5f6; /* Medium blue */
+    --wave13: #42a5f5; /* Blue */
+    --wave14: #2196f3; /* Material blue */
+    --wave15: #1e88e5; /* Medium dark blue */
+    --wave16: #1976d2; /* Dark blue */
+    --wave17: #1565c0; /* Darker blue */
+    --wave18: #0d47a1; /* Very dark blue */
+    --wave19: #f0f8ff; /* Alice blue */
+    --wave20: #e6f3ff; /* Very light blue */
+  }
+
+  html.dark {
+    /* Night Sea Palette - Deep, mystical colors */
+    --wave1: #0a1628; /* Deep navy */
+    --wave2: #1b2951; /* Dark blue */
+    --wave3: #2c3e50; /* Blue gray */
+    --wave4: #34495e; /* Darker blue gray */
+    --wave5: #2e4f4f; /* Dark slate gray */
+    --wave6: #2f4f4f; /* Dark slate gray */
+    --wave7: #1e3a8a; /* Dark blue */
+    --wave8: #1e40af; /* Blue */
+    --wave9: #3b82f6; /* Medium blue */
+    --wave10: #60a5fa; /* Light blue */
+    --wave11: #93c5fd; /* Lighter blue */
+    --wave12: #dbeafe; /* Very light blue */
+    --wave13: #1f2937; /* Gray 800 */
+    --wave14: #374151; /* Gray 700 */
+    --wave15: #4b5563; /* Gray 600 */
+    --wave16: #6b7280; /* Gray 500 */
+    --wave17: #9ca3af; /* Gray 400 */
+    --wave18: #d1d5db; /* Gray 300 */
+    --wave19: #0f172a; /* Slate 900 */
+    --wave20: #1e293b; /* Slate 800 */
+  }
+
+  /* Subtle wave animation - only animates the top edge, flat bottom */
+  @keyframes subtleWave {
+    0%,
+    100% {
+      clip-path: polygon(
+        0% 90%,
+        10% 89%,
+        20% 88%,
+        30% 89%,
+        40% 90%,
+        50% 91%,
+        60% 90%,
+        70% 89%,
+        80% 88%,
+        90% 89%,
+        100% 90%,
+        100% 100%,
+        0% 100%
+      );
+    }
+    25% {
+      clip-path: polygon(
+        0% 89%,
+        10% 90%,
+        20% 91%,
+        30% 90%,
+        40% 89%,
+        50% 88%,
+        60% 89%,
+        70% 90%,
+        80% 91%,
+        90% 90%,
+        100% 89%,
+        100% 100%,
+        0% 100%
+      );
+    }
+    50% {
+      clip-path: polygon(
+        0% 91%,
+        10% 88%,
+        20% 89%,
+        30% 92%,
+        40% 91%,
+        50% 89%,
+        60% 88%,
+        70% 91%,
+        80% 90%,
+        90% 88%,
+        100% 91%,
+        100% 100%,
+        0% 100%
+      );
+    }
+    75% {
+      clip-path: polygon(
+        0% 88%,
+        10% 91%,
+        20% 90%,
+        30% 88%,
+        40% 92%,
+        50% 90%,
+        60% 91%,
+        70% 88%,
+        80% 89%,
+        90% 91%,
+        100% 88%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  }
+
+  .wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    will-change: clip-path;
+  }
+
+  /* Gentle wave layers with reduced opacity for subtle effect */
+  #wave1 {
+    background-color: var(--wave1);
+    opacity: 0.3;
+    animation: subtleWave 15s infinite ease-in-out;
+    animation-delay: -0s;
+  }
+  #wave2 {
+    background-color: var(--wave2);
+    opacity: 0.28;
+    animation: subtleWave 14s infinite ease-in-out;
+    animation-delay: -1s;
+  }
+  #wave3 {
+    background-color: var(--wave3);
+    opacity: 0.26;
+    animation: subtleWave 13s infinite ease-in-out;
+    animation-delay: -2s;
+  }
+  #wave4 {
+    background-color: var(--wave4);
+    opacity: 0.24;
+    animation: subtleWave 12s infinite ease-in-out;
+    animation-delay: -3s;
+  }
+  #wave5 {
+    background-color: var(--wave5);
+    opacity: 0.22;
+    animation: subtleWave 11s infinite ease-in-out;
+    animation-delay: -4s;
+  }
+  #wave6 {
+    background-color: var(--wave6);
+    opacity: 0.2;
+    animation: subtleWave 10s infinite ease-in-out;
+    animation-delay: -5s;
+  }
+  #wave7 {
+    background-color: var(--wave7);
+    opacity: 0.18;
+    animation: subtleWave 9s infinite ease-in-out;
+    animation-delay: -6s;
+  }
+  #wave8 {
+    background-color: var(--wave8);
+    opacity: 0.16;
+    animation: subtleWave 8s infinite ease-in-out;
+    animation-delay: -7s;
+  }
+  #wave9 {
+    background-color: var(--wave9);
+    opacity: 0.14;
+    animation: subtleWave 7s infinite ease-in-out;
+    animation-delay: -8s;
+  }
+  #wave10 {
+    background-color: var(--wave10);
+    opacity: 0.12;
+    animation: subtleWave 6s infinite ease-in-out;
+    animation-delay: -9s;
+  }
+  #wave11 {
+    background-color: var(--wave11);
+    opacity: 0.1;
+    animation: subtleWave 15s infinite ease-in-out;
+    animation-delay: -10s;
+    animation-direction: reverse;
+  }
+  #wave12 {
+    background-color: var(--wave12);
+    opacity: 0.09;
+    animation: subtleWave 14s infinite ease-in-out;
+    animation-delay: -11s;
+    animation-direction: reverse;
+  }
+  #wave13 {
+    background-color: var(--wave13);
+    opacity: 0.08;
+    animation: subtleWave 13s infinite ease-in-out;
+    animation-delay: -12s;
+    animation-direction: reverse;
+  }
+  #wave14 {
+    background-color: var(--wave14);
+    opacity: 0.07;
+    animation: subtleWave 12s infinite ease-in-out;
+    animation-delay: -13s;
+    animation-direction: reverse;
+  }
+  #wave15 {
+    background-color: var(--wave15);
+    opacity: 0.06;
+    animation: subtleWave 11s infinite ease-in-out;
+    animation-delay: -14s;
+    animation-direction: reverse;
+  }
+  #wave16 {
+    background-color: var(--wave16);
+    opacity: 0.05;
+    animation: subtleWave 10s infinite ease-in-out;
+    animation-delay: -15s;
+    animation-direction: reverse;
+  }
+  #wave17 {
+    background-color: var(--wave17);
+    opacity: 0.04;
+    animation: subtleWave 9s infinite ease-in-out;
+    animation-delay: -16s;
+    animation-direction: reverse;
+  }
+  #wave18 {
+    background-color: var(--wave18);
+    opacity: 0.03;
+    animation: subtleWave 8s infinite ease-in-out;
+    animation-delay: -17s;
+    animation-direction: reverse;
+  }
+  #wave19 {
+    background-color: var(--wave19);
+    opacity: 0.02;
+    animation: subtleWave 7s infinite ease-in-out;
+    animation-delay: -18s;
+    animation-direction: reverse;
+  }
+  #wave20 {
+    background-color: var(--wave20);
+    opacity: 0.01;
+    animation: subtleWave 6s infinite ease-in-out;
+    animation-delay: -19s;
+    animation-direction: reverse;
+  }
+</style>
